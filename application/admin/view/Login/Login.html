@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content" content="text/http" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/style.css" rel="stylesheet"/>
+<script src="__PUBLIC__/admin/js/jquery.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//等待dom元素加载完毕.
+$(document).ready(function(){
+  $('#username').blur(function(){
+  	var username=$("#username").val();
+  	if($("#username").val()=='')
+  	{
+  		document.getElementById('errorMessage').innerHTML="用户名不能为空";
+  		$('#username').focus();
+  	}else
+  	{
+  		document.getElementById('errorMessage').innerHTML="";
+  	}
+  });
+
+  $('#password').blur(function(){
+  	if($("#password").val()=='')
+  	{
+  		document.getElementById('errorMessage').innerHTML="密码不能为空";
+  	    $('#password').focus();
+  	}else
+  	{
+  		document.getElementById('errorMessage').innerHTML="";
+  	}
+  });
+});
+
+</script>
+</head>
+<body>
+<header class="header" > <!--页头部分 -->
+<h1>研究生管理平台</h1>
+</header>
+<div class="content"><!-- 登陆-->
+<form  action ="" method="post">
+<div class="loginbox">
+ <p>用户登陆</p>
+ <div class="login">
+    用户名：<input type="text" name="username" id="username"/><br>
+	<br>
+    密   码： <input type="text" name="password" id="password"/><br>
+	<br>
+	<input type="text" name="verfication" id="verfication" style="width:100px;">
+	<laber style="border:1px;border-color:gray">验证码</laber><br>
+	<br>
+	<a class="Foundpwd" href="#">找回密码</a><br>
+	<br>
+	<input type="submit" class="sub_btn" name="submit" value="登陆" style="margin-right:10px;"/> 
+	<input type="submit" name="cancel" value="取消"/>
+	<br>
+	<br>
+	<span id="errorMessage" style="color:red;"></span>
+	</div>
+ </div>
+ </form>
+</div>
+<div class="footer"><!--页尾部分-->
+</div>
+<body>
+</html>
